@@ -32,6 +32,7 @@ source make_process.sh zh-SMEFTsim3 SMEFT:4,5,7,8,9,21,22,23,24,25,26,27,30 0.01
 and then follow the EFT2Obs instructions for generation
 ```
 export HIGGSPRODMODE=ZH
+source local/rivetenv.sh
 python scripts/run_gridpack.py --gridpack gridpack_zh-SMEFTsim3.tar.gz -s 1 -e 500 \
   -p HiggsTemplateCrossSectionsStage1,HiggsTemplateCrossSections -o test-zh
 yodamerge -o test-zh/Rivet.yoda test-zh/Rivet_*

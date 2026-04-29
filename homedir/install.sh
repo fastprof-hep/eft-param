@@ -7,7 +7,7 @@ git clone https://github.com/ajgilbert/EFT2Obs.git
 # Install the tools
 ./scripts/setup_mg5.sh
 ./scripts/setup_rivet.sh
-source /home/mcuser/EFT2Obs/local/rivetenv.sh # needed ?
+source local/rivetenv.sh
 
 # Add the main models
 ./scripts/setup_model_SMEFTsim3.sh

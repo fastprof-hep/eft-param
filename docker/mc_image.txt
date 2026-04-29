@@ -1,0 +1,24 @@
+# Use the official Ubuntu image as the base
+FROM cern/alma9-base
+
+# Add zsh
+RUN dnf -y install zsh nano man sudo passwd diffutils patch \
+glibc-headers glibc-devel mesa-libGL libtirpc \
+python3-numpy python3-scipy boost boost-devel \
+git cmake freetype wget curl rsync which \
+pcre2-utf16 libXrender libXft libXpm libSM libjpeg-turbo \
+g++ gfortran zlib-devel \
+python3-pip python3-six 
+
+RUN groupadd mcuser && useradd -m -s /bin/bash -g mcuser mcuser
+
+RUN echo "mcuser ALL = NOPASSWD: ALL" >> /etc/sudoers
+
+# Switch to the custom user
+USER mcuser
+
+# Set the workdir
+WORKDIR /home/mcuser
+
+# Switch to the custom user
+USER root
